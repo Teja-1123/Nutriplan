@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your profile · Nourish & Nest</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="theme.js"></script>
+</head>
+
+<body>
+  <header class="site-header"><a class="brand" href="index.html"><span>✦</span>NutriPlan <span>✦</span></a>
+    <nav aria-label="Main navigation"><a href="index.html">Home</a><a href="recipes.html">Recipes</a><a
+        href="planner.html">Planner</a><a href="pantry.html">Pantry</a><a href="saved.html">Saved</a><a
+        href="shopping-list.html">Shopping list</a><a href="login.html" id="auth-link">Login</a></nav>
+  </header>
+  <main class="profile-page">
+    <p class="eyebrow">YOUR PROFILE</p>
+    <h1 class="page-title" id="profile-heading">Your profile</h1>
+    <p class="status" id="profile-stats"></p>
+    <form id="profile-form" class="profile-card">
+      <h2>Your avatar</h2>
+      <div class="avatar-picker">
+        <span class="avatar lg" id="avatar-preview"></span>
+        <div class="avatar-grid" id="avatar-grid" aria-label="Choose an avatar"></div>
+        <div class="color-grid" id="color-grid" aria-label="Choose a colour"></div>
+      </div>
+      <h2>Details</h2>
+      <label for="p-name">Name</label><input id="p-name" required maxlength="60" />
+      <label for="p-email">Email</label><input id="p-email" disabled />
+      <label for="p-diet">Dietary preference</label>
+      <select id="p-diet">
+        <option value="">No preference</option>
+        <option>Vegetarian</option>
+        <option>Vegan</option>
+        <option>Pescatarian</option>
+        <option>Gluten-free</option>
+        <option>Dairy-free</option>
+      </select>
+      <label for="p-goal">Daily calorie goal</label><input id="p-goal" type="number" min="800" max="6000" step="50"
+        required />
+      <button class="button" type="submit">Save profile</button>
+      <p class="profile-msg" id="profile-msg" role="status"></p>
+    </form>
+    <form id="password-form" class="profile-card">
+      <h2>Change password</h2>
+      <label for="p-current">Current password</label><input id="p-current" type="password"
+        autocomplete="current-password" required />
+      <label for="p-new">New password (min 8 characters)</label><input id="p-new" type="password"
+        autocomplete="new-password" minlength="8" maxlength="128" required />
+      <button class="button" type="submit">Update password</button>
+      <p class="profile-msg" id="password-msg" role="status"></p>
+    </form>
+  </main>
+  <script src="api.js" data-auth="required" data-main="profile.js"></script>
+</body>
+
+</html>

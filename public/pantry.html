@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pantry match · NutriPlan</title>
+  <link rel="preconnect" href="https://img.spoonacular.com" />
+  <link rel="stylesheet" href="styles.css" />
+  <script src="theme.js"></script>
+</head>
+
+<body data-page="pantry">
+  <header class="site-header"><a class="brand" href="index.html"><span>✦</span> NutriPlan <span>✦</span></a>
+    <nav aria-label="Main navigation"><a href="index.html">Home</a><a href="recipes.html">Recipes</a><a
+        href="planner.html">Planner</a><a href="pantry.html">Pantry</a><a href="saved.html">Saved</a><a
+        href="shopping-list.html">Shopping list</a><a href="index.html#about">About</a><a href="login.html"
+        id="auth-link">Login</a></nav>
+  </header>
+  <main>
+    <section class="section recipes-page pantry-page">
+      <p class="eyebrow">WHAT'S IN YOUR KITCHEN</p>
+      <h1 class="page-title">Pantry match</h1>
+      <p class="lead">Add what you already have. We'll rank recipes by how much of each one is already in your kitchen,
+        and show what's missing.</p>
+      <form id="pantry-form" class="pantry-form"><label class="sr-only" for="pantry-input">Add an
+          ingredient</label><input id="pantry-input" autocomplete="off" maxlength="40"
+          placeholder="Type an ingredient and press Enter (e.g. chicken)" /><button id="pantry-add" type="button"
+          class="tool-btn">Add</button><button class="button" type="submit">Find recipes <span>→</span></button></form>
+      <div id="pantry-chips" class="pantry-chips" aria-label="Your ingredients"></div>
+      <div id="pantry-quick" class="pantry-quick" aria-label="Quick add"></div>
+      <p id="recipe-status" class="status" aria-live="polite">Add a few ingredients to begin.</p>
+      <div id="recipe-grid" class="recipe-grid"></div>
+    </section>
+  </main>
+  <dialog id="recipe-dialog"><button id="close-dialog" class="dialog-close" aria-label="Close">×</button>
+    <div id="dialog-content"></div>
+  </dialog>
+  <template id="recipe-template">
+    <article class="recipe-card"><img loading="lazy" alt="" />
+      <div class="recipe-copy">
+        <div class="card-meta"></div>
+        <h3></h3>
+        <div class="card-actions"><button class="plan-add" aria-label="Add recipe to planner">＋</button><button
+            class="save-button">♡ Save</button></div>
+      </div>
+    </article>
+  </template>
+  <script src="api.js" data-main="app.js,pantry.js"></script>
+</body>
+
+</html>

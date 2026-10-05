@@ -1,0 +1,15 @@
+services:
+  mongo:
+    image: mongo:7
+    volumes: [mongo-data:/data/db]
+  app:
+    build: .
+    ports: ["3000:3000"]
+    depends_on: [mongo]
+    environment:
+      MONGODB_URI: mongodb://mongo:27017/nourish-and-nest
+      SESSION_SECRET: change-this-to-a-long-random-string
+      NODE_ENV: development
+      SPOONACULAR_API_KEY: ${SPOONACULAR_API_KEY:-your-spoonacular-api-key}
+volumes:
+  mongo-data:

@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shopping list · NutriPlan</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="theme.js"></script>
+</head>
+
+<body data-page="shopping">
+  <header class="site-header"><a class="brand" href="index.html"><span>✦</span> NutriPlan <span>✦</span> </a>
+    <nav aria-label="Main navigation"><a href="index.html">Home</a><a href="recipes.html">Recipes</a><a
+        href="planner.html">Planner</a><a href="pantry.html">Pantry</a><a href="saved.html">Saved</a><a
+        href="shopping-list.html">Shopping list</a><a href="index.html#about">About</a><a href="login.html"
+        id="auth-link">Login</a></nav>
+  </header>
+  <main>
+    <section class="section shopping-page">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">PREPARE WITH EASE</p>
+          <h1 class="page-title">Grocery list</h1>
+        </div><button id="clear-shopping" class="text-button">Clear completed</button>
+      </div>
+      <p id="shopping-count" class="lead">Keep the ingredients you need in one calm, simple place.</p>
+      <div id="shopping-groups" class="shopping-groups"></div>
+    </section>
+  </main>
+  <script src="api.js" data-auth="required" data-main="shopping-list.js"></script>
+</body>
+
+</html>

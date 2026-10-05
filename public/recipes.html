@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Recipes · NutriPlan</title>
+  <link rel="preconnect" href="https://img.spoonacular.com" />
+  <link rel="stylesheet" href="styles.css" />
+  <script src="theme.js"></script>
+</head>
+
+<body data-page="recipes">
+  <header class="site-header"><a class="brand" href="index.html"><span>✦</span> NutriPlan <span>✦</span></a>
+    <nav aria-label="Main navigation"><a href="index.html">Home</a><a href="recipes.html">Recipes</a><a
+        href="planner.html">Planner</a><a href="pantry.html">Pantry</a><a href="saved.html">Saved</a><a
+        href="shopping-list.html">Shopping list</a><a href="index.html#about">About</a><a href="login.html"
+        id="auth-link">Login</a></nav>
+  </header>
+  <main>
+    <section id="discover" class="section recipes-page">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">RECIPE DISCOVERY</p>
+          <h1 class="page-title">What sounds good today?</h1>
+        </div><button id="surprise" class="text-button">Surprise me →</button>
+      </div>
+      <form id="search-form" class="search" role="search"><label class="sr-only" for="search-input">Search
+          recipes</label><input id="search-input" type="search"
+          placeholder="Try Italian, Tiramisu, Opera Cake…" /><button aria-label="Search">⌕</button></form>
+      <div id="recent-searches" class="recent-searches" aria-label="Recently searched recipes"></div>
+      <div id="category-list" class="categories" aria-label="Recipe categories"></div>
+      <p id="recipe-status" class="status" aria-live="polite">Loading recipes…</p>
+      <div id="recipe-grid" class="recipe-grid"></div>
+    </section>
+  </main>
+  <dialog id="recipe-dialog"><button id="close-dialog" class="dialog-close" aria-label="Close">×</button>
+    <div id="dialog-content"></div>
+  </dialog>
+  <template id="recipe-template">
+    <article class="recipe-card"><img loading="lazy" alt="" />
+      <div class="recipe-copy">
+        <div class="card-meta"></div>
+        <h3></h3>
+        <div class="card-actions"><button class="plan-add" aria-label="Add recipe to planner">＋</button><button
+            class="save-button">♡ Save</button></div>
+      </div>
+    </article>
+  </template>
+  <script src="api.js" data-main="app.js"></script>
+</body>
+
+</html>

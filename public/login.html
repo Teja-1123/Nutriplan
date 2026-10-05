@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login · NutriPlan</title>
+    <link rel="stylesheet" href="login.css" />
+  </head>
+  <body>
+    <main class="login-shell">
+      <a class="brand" href="index.html"><span>✦</span> NutriPlan <span>✦</span></a>
+      <section class="login-card">
+        <p class="eyebrow">YOUR KITCHEN, YOUR RHYTHM</p>
+        <h1 id="login-title">Welcome back.</h1>
+        <p id="login-intro" class="intro">Sign in to keep your meal planning feeling personal.</p>
+        <form id="login-form">
+          <label for="name">Your name</label>
+          <input id="name" autocomplete="name" required placeholder="e.g. Ananya" />
+          <label for="email">Email address</label>
+          <input id="email" type="email" autocomplete="email" required placeholder="you@example.com" />
+          <label for="password">Password</label>
+          <input id="password" type="password" autocomplete="current-password" required minlength="8" maxlength="128" placeholder="At least 8 characters" />
+          <button id="submit-button" type="submit">Sign in <span>→</span></button>
+        </form>
+        <p class="switch-copy">New to NutriPlan ? <button id="switch-mode" type="button">Create an account</button></p>
+        <p class="note" id="login-error" role="alert" style="color:#c95157"></p>
+      </section>
+    </main>
+    <script src="login.js"></script>
+  </body>
+</html>

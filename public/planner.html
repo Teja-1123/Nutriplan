@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Planner · NutriPlan</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="theme.js"></script>
+</head>
+
+<body data-page="planner">
+  <header class="site-header"><a class="brand" href="index.html"><span>✦</span> NutriPlan<span>✦</span> </a>
+    <nav aria-label="Main navigation"><a href="index.html">Home</a><a href="recipes.html">Recipes</a><a
+        href="planner.html">Planner</a><a href="pantry.html">Pantry</a><a href="saved.html">Saved</a><a
+        href="shopping-list.html">Shopping list</a><a href="index.html#about">About</a><a href="login.html"
+        id="auth-link">Login</a></nav>
+  </header>
+  <main>
+    <section class="section planner-page">
+      <p class="eyebrow">YOUR MEAL RHYTHM</p>
+      <h1 class="page-title">Meal planner</h1>
+      <p class="lead">Pick a date, then add meals for that day.</p>
+      <div class="planner-tools"><button id="autoplan-open" class="button" type="button">✨ Plan my week</button><button
+          id="week-shopping" class="tool-btn" type="button">🛒 Week → shopping list</button></div>
+      <p id="tools-status" class="status" aria-live="polite"></p>
+      <div class="calendar-layout">
+        <div class="calendar-card">
+          <div class="calendar-heading"><button id="previous-month" aria-label="Previous month">‹</button>
+            <h2 id="calendar-title"></h2><button id="next-month" aria-label="Next month">›</button>
+          </div>
+          <div class="weekday-row">
+            <span>Sun</span><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span>
+          </div>
+          <div id="calendar-grid" class="calendar-grid"></div>
+        </div>
+        <aside class="day-plan">
+          <p class="eyebrow">MEALS FOR</p>
+          <h2 id="selected-date"></h2>
+          <div id="calorie-ring" class="ring-card" aria-live="polite"></div>
+          <form id="meal-form" class="meal-add"><input id="meal-input" required
+              placeholder="Add a meal or recipe" /><button type="submit">Add</button></form>
+          <ul id="day-meals" class="day-meals"></ul>
+        </aside>
+      </div>
+    </section>
+  </main>
+  <script src="api.js" data-auth="required" data-main="planner.js,planner-tools.js"></script>
+</body>
+
+</html>
